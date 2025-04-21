@@ -82,6 +82,18 @@ function renderBooks() {
             });
             li.appendChild(saveBtn);
             input.focus();
+
+            const cancelBtn = document.createElement("button");
+            cancelBtn.className = "cancel-btn";
+            cancelBtn.textContent = "Hủy";
+            cancelBtn.addEventListener("click", () => {
+                edittingBookId = null;
+                edittingBookValue = "";
+                renderBooks();
+            });
+            li.appendChild(cancelBtn);
+
+            input.focus();
         } else {
             const nameSpan = document.createElement("span");
             nameSpan.className = "book-name";
